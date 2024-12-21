@@ -1,8 +1,8 @@
-minNumber = 1
-maxNumber = 100
+let minNumber = 1
+let maxNumber = 100
 
-numberFirstPC = Math.ceil(Math.random() * maxNumber)
-numberSecondPC = Math.ceil(maxNumber / 2)
+let numberFirstPC = Math.ceil(Math.random() * maxNumber)
+let numberSecondPC = Math.ceil(maxNumber / 2)
 
 console.log(`Компьютер 1 загадал число - ${numberFirstPC}.\n`)
 
