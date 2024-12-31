@@ -11,10 +11,15 @@ let myMethod = {
         }
         return resultArray;
     },
-    myIndexOf(arr, item, from) {
-
+    myIndexOf(array, item, from = 0) {
+        for (let i = from; i < array.length; i++){
+            if (array[i] === item){
+                return i;
+            }
+        }
+        return -1;
     },
-    myIncludes(arr, item, from){
+    myIncludes(array, item, from){
 
     },
 };
@@ -32,3 +37,6 @@ console.log("Start = -3: ", myMethod.mySlice(array, -3), array.slice(-3));
 console.log("Start = undefined, end = -3: ", myMethod.mySlice(array, undefined, -3), array.slice(undefined, -3));
 console.log("Start = -4, end = -2: ", myMethod.mySlice(array, -4, -2), array.slice(-4, -2));
 console.log("Start = -2, end = -4: ", myMethod.mySlice(array, -2, -4), array.slice(-2, -4));
+
+console.log("Сравнение myIndexOF и indexOf");
+console.log(myMethod.myIndexOf(array, "1"), array.indexOf("1"));
