@@ -39,4 +39,8 @@ console.log("Start = -4, end = -2: ", myMethod.mySlice(array, -4, -2), array.sli
 console.log("Start = -2, end = -4: ", myMethod.mySlice(array, -2, -4), array.slice(-2, -4));
 
 console.log("Сравнение myIndexOF и indexOf");
-console.log(myMethod.myIndexOf(array, "1"), array.indexOf("1"));
+console.log("Item = '1', from = undefined: ", myMethod.myIndexOf(array, "1"), array.indexOf("1"));
+console.log("Item = 't', from = undefined: ", myMethod.myIndexOf(array, "t"), array.indexOf("t"));
+console.log("Item = 'T', from = undefined: ", myMethod.myIndexOf(array, "T"), array.indexOf("T"));
+console.log("Item = 't', from = 2: ", myMethod.myIndexOf(array, "t", 2), array.indexOf("t", 2));
+console.log("Item = '1', from = 2: ", myMethod.myIndexOf(array, "1", 2), array.indexOf("1", 2));
