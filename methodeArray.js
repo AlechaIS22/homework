@@ -1,10 +1,7 @@
 let myMethod = {
-    mySlice (array, start, end) {
+    mySlice (array, start = 0, end = array.length) {
 
-        start === undefined ? start = 0 : start;
         start < 0 ? start += array.length : start;
-
-        end === undefined ? end = array.length : end;
         end < 0 ? end += array.length : end;
 
         let resultArray = [];
@@ -15,13 +12,15 @@ let myMethod = {
         return resultArray;
     },
     myIndexOf(arr, item, from) {
- 
+
     },
     myIncludes(arr, item, from){
 
     },
 };
+
 let array = ['t', 'e', 's', 't'];
+
 console.log("Сравнение slice и mySlice");
 console.log("Изначальный массив", array);
 console.log("Без start и end: ", myMethod.mySlice(array), array.slice());
