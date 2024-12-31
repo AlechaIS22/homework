@@ -19,12 +19,17 @@ let myMethod = {
         }
         return -1;
     },
-    myIncludes(array, item, from){
-
+    myIncludes(array, item, from = 0){
+        for (let i = from; i < array.length; i++){
+            if (String(array[i]) === String(item)){
+                return true;
+            }
+        }
+        return false;
     },
 };
 
-let array = ['t', 'e', 's', 't'];
+let array = ['t', 'e', 's', 't', NaN, undefined, null];
 
 console.log("Сравнение slice и mySlice");
 console.log("Изначальный массив", array);
@@ -44,3 +49,16 @@ console.log("Item = 't', from = undefined: ", myMethod.myIndexOf(array, "t"), ar
 console.log("Item = 'T', from = undefined: ", myMethod.myIndexOf(array, "T"), array.indexOf("T"));
 console.log("Item = 't', from = 2: ", myMethod.myIndexOf(array, "t", 2), array.indexOf("t", 2));
 console.log("Item = '1', from = 2: ", myMethod.myIndexOf(array, "1", 2), array.indexOf("1", 2));
+console.log("Item = NaN, from = 2: ", myMethod.myIndexOf(array, NaN, 2), array.indexOf(NaN, 2));
+console.log("Item = null, from = 2: ", myMethod.myIndexOf(array, null, 2), array.indexOf(null, 2));
+console.log("Item = undefined, from = 2: ", myMethod.myIndexOf(array, undefined, 2), array.indexOf(undefined, 2));
+
+console.log("Сравнение myIncludes и includes");
+console.log("Item = '1', from = undefined: ", myMethod.myIncludes(array, "1"), array.includes("1"));
+console.log("Item = 't', from = undefined: ", myMethod.myIncludes(array, "t"), array.includes("t"));
+console.log("Item = 'T', from = undefined: ", myMethod.myIncludes(array, "T"), array.includes("T"));
+console.log("Item = 't', from = 2: ", myMethod.myIncludes(array, "t", 2), array.includes("t", 2));
+console.log("Item = '1', from = 2: ", myMethod.myIncludes(array, "1", 2), array.includes("1", 2));
+console.log("Item = NaN, from = 2: ", myMethod.myIncludes(array, NaN, 2), array.includes(NaN, 2));
+console.log("Item = null, from = 2: ", myMethod.myIncludes(array, null, 2), array.includes(null, 2));
+console.log("Item = undefined, from = 2: ", myMethod.myIncludes(array, undefined, 2), array.includes(undefined, 2));
