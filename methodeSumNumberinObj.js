@@ -12,8 +12,8 @@ let methodObject = {
         }
         return sum;
     },
-    objHsaNumberInArray(testObject) {
-        return Object.entries(testObject)
+    objHsaNumberInArray(object) {
+        return Object.entries(object)
             .filter(([, value]) => isNumber(value))
             .sort(([, firstValue], [, secondValue]) => secondValue - firstValue)
             .map(([key,]) => key);
