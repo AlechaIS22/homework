@@ -5,7 +5,7 @@ let myMethods = {
 
     stringClipping (string, limitation = 40) {
         if (string.length <= limitation) return string
-        else return string.slice(0, string.lastIndexOf(" ", 40)) + "...";
+        else return string.slice(0, string.lastIndexOf(" ", limitation)) + "...";
     },
 
     isSubstring (firstString, secondString) {
